@@ -9,7 +9,7 @@ import AppRoutes from "./routes";
 import Headermain from "../header";
 import AnimatedCursor  from "../hooks/AnimatedCursor";
 import "./App.css";
-
+import Clarity from '@microsoft/clarity';
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -20,6 +20,11 @@ function _ScrollToTop(props) {
 const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
+
+  const projectId = "q2w18oz30f"
+
+Clarity.init(projectId);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="cursor__dot">
